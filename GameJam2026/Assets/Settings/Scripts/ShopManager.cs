@@ -30,3 +30,4 @@ using UnityEngine;
         BalanceText.text = $"Balance: {Balance}";
     }
 }
+*/
