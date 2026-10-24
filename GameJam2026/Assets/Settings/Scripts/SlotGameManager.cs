@@ -17,7 +17,11 @@ public class SlotGameManager : MonoBehaviour
     public TextMeshProUGUI StatusText;
 
     [Header("Game Values")]
-    public int Balance = 1000;
+    public int Balance
+    {
+        get => GameManager.Instance.Balance;
+        set => GameManager.Instance.Balance = value;
+    }
     public int CurrentBet = 10;
 
     private void Start()
