@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class ShopManager : MonoBehaviour
+/**public class ShopManager : MonoBehaviour
 {
     [Header("UI")]
     public TextMeshProUGUI BalanceText;
