@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c708853de08a94b4582d3e7f9eb2ebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadSceneButton
-  sceneName: numberslot
+  sceneName: GameScreen
 --- !u!1 &450751996
 GameObject:
   m_ObjectHideFlags: 0
