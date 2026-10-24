@@ -12,7 +12,7 @@ public class ShopManager : MonoBehaviour
 
     public int Balance
     {
-        get => SlotGameManager.Instance.Balance;
+        get => GameManager.Instance.Balance;
     }
 
 
