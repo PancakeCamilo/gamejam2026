@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SlotGameManager : MonoBehaviour
 {
+    public static SlotGameManager Instance;
+
     [Header("Reels")]
     public Reel[] reels;
 
