@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Reel
   symbolSprites: []
-  reelImage: {fileID: 0}
+  reelImage: {fileID: 139384739}
 --- !u!1 &426419979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1611,7 +1611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Reel
   symbolSprites: []
-  reelImage: {fileID: 0}
+  reelImage: {fileID: 1154511569}
 --- !u!1 &1158524513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,7 +2217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Reel
   symbolSprites: []
-  reelImage: {fileID: 0}
+  reelImage: {fileID: 1514666287}
 --- !u!1 &1591587745
 GameObject:
   m_ObjectHideFlags: 0
