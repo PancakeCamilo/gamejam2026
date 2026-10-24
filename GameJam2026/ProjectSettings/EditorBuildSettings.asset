@@ -5,23 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/menu.unity
     guid: 4880a37ac1e07ef439ea45d441f2be07
   - enabled: 1
-    path: Assets/Scenes/numberslot.unity
-    guid: 70a4bbf287d943b4fa8260332edd335a
-  - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: dc2e7322e0fe6d44eadb486a339e7798
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/debtful.unity
     guid: 12ff1f91cf002804c816daf644b60ad3
+=======
+    path: Assets/Scenes/win.unity
+    guid: 9a123131488661541b0bfe1aea27162f
+>>>>>>> cd562c59e4f4e1f1b6ca125d280ec8929e20aae0
   - enabled: 1
     path: Assets/Scenes/lose.unity
     guid: 3f9545369bc65674ab348eabfd0f1276
+  - enabled: 1
+    path: Assets/Scenes/GameScreen.unity
+    guid: b287b0f3ae67cd842bf4cf17877e57fe
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
