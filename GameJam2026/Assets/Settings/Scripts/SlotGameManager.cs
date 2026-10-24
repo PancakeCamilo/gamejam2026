@@ -24,6 +24,8 @@ public class SlotGameManager : MonoBehaviour
         set => GameManager.Instance.Balance = value;
     }
     public int CurrentBet = 10;
+    public int MinBet = 10;              // becomes the last bet made
+    public int BetIncreasePerSpin = 5;
 
     private void Start()
     {
@@ -36,7 +38,7 @@ public class SlotGameManager : MonoBehaviour
     void UpdateUI()
     {
         BalanceText.text = $"Balance: {Balance}";
-        BetText.text = $"Bet: {CurrentBet}";
+        BetText.text = $"Bet: {CurrentBet} (Min: {MinBet})";
     }
 
     public void IncreaseBet()
@@ -50,7 +52,7 @@ public class SlotGameManager : MonoBehaviour
 
     public void DecreaseBet()
     {
-        if (CurrentBet - 10 >= 10)
+        if (CurrentBet - 10 >= MinBet)
         {
             CurrentBet -= 10;
             UpdateUI();
@@ -68,12 +70,12 @@ public class SlotGameManager : MonoBehaviour
             }
 
             return;
-
         }
         Balance -= CurrentBet;
         UpdateUI();
         StartCoroutine(SpinRoutine());
     }
+
     private IEnumerator SpinRoutine()
     {
         ToggleButtons(false);
@@ -87,8 +89,11 @@ public class SlotGameManager : MonoBehaviour
             yield return new WaitUntil(() => !reel.IsSpinning);
         }
         CheckWin();
+        RaiseMinBet();
+        UpdateUI();
         ToggleButtons(true);
     }
+
     private void CheckWin()
     {
         int r1 = reels[0].ResultIndex;
@@ -119,11 +124,21 @@ public class SlotGameManager : MonoBehaviour
         }
     }
 
+    void RaiseMinBet()
+    {
+        int lastBet = CurrentBet;
+
+        MinBet = lastBet;                          // can't go below last bet
+        CurrentBet = lastBet + BetIncreasePerSpin; // auto +5 for next round
+
+        if (Balance < CurrentBet)
+            StatusText.text += $"\nCan't afford next bet ({CurrentBet})!";
+    }
+
     void ToggleButtons(bool state)
     {
         SpinButton.interactable = state;
         AddButton.interactable = state;
         SubtractButton.interactable = state;
     }
-
 }

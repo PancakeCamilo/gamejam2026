@@ -1494,6 +1494,8 @@ MonoBehaviour:
   BetText: {fileID: 13211918}
   StatusText: {fileID: 804137871}
   CurrentBet: 10
+  MinBet: 10
+  BetIncreasePerSpin: 5
 --- !u!4 &681248328
 Transform:
   m_ObjectHideFlags: 0
@@ -2100,6 +2102,11 @@ MonoBehaviour:
   - {fileID: -8937163692382422890, guid: 93f93121d4bd2364fa1f79f4ce7f9033, type: 3}
   - {fileID: -5046387708612088150, guid: 93f93121d4bd2364fa1f79f4ce7f9033, type: 3}
   - {fileID: 6288471124402551571, guid: 93f93121d4bd2364fa1f79f4ce7f9033, type: 3}
+  - {fileID: -8140126251493875018, guid: 93f93121d4bd2364fa1f79f4ce7f9033, type: 3}
+  - {fileID: 5412637491390060868, guid: 93f93121d4bd2364fa1f79f4ce7f9033, type: 3}
+  - {fileID: 21300000, guid: 3b5de01eb9204a046b4219f01487487f, type: 3}
+  - {fileID: 21300000, guid: ab333e2bb294c1f419dc518b00ec8b7c, type: 3}
+  - {fileID: 21300000, guid: ced45aea751f3be49aec5e793dfe8736, type: 3}
   reelImage: {fileID: 1295344713}
 --- !u!114 &1295344713
 MonoBehaviour:
