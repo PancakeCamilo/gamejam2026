@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SlotGameManager : MonoBehaviour
 {
@@ -54,13 +55,18 @@ public class SlotGameManager : MonoBehaviour
             CurrentBet -= 10;
             UpdateUI();
         }
-    }   
+    }
 
     public void StartSpin()
     {
-        if(Balance < CurrentBet)
+        if (Balance < CurrentBet)
         {
             StatusText.text = "Insufficient Balance!";
+            if (Balance > 0)
+            {
+                SceneManager.LoadScene("lose");
+            }
+
             return;
 
         }
@@ -72,11 +78,11 @@ public class SlotGameManager : MonoBehaviour
     {
         ToggleButtons(false);
         StatusText.text = "Spinning...";
-        for(int i=0;i<reels.Length;i++)
+        for (int i = 0; i < reels.Length; i++)
         {
             StartCoroutine(reels[i].SpinReel(1.0f + (i * 0.5f)));
         }
-        foreach(var reel in reels)
+        foreach (var reel in reels)
         {
             yield return new WaitUntil(() => !reel.IsSpinning);
         }
@@ -85,16 +91,16 @@ public class SlotGameManager : MonoBehaviour
     }
     private void CheckWin()
     {
-        int r1= reels[0].ResultIndex;
-        int r2= reels[1].ResultIndex;
-        int r3= reels[2].ResultIndex;
-        if(r1==r2 && r2==r3)
+        int r1 = reels[0].ResultIndex;
+        int r2 = reels[1].ResultIndex;
+        int r3 = reels[2].ResultIndex;
+        if (r1 == r2 && r2 == r3)
         {
             int winAmount = CurrentBet * 10;
             Balance += winAmount;
             StatusText.text = $"JACKPOT! You Win! +{winAmount}";
         }
-        else if(r1==r2 || r2==r3 || r1==r3)
+        else if (r1 == r2 || r2 == r3 || r1 == r3)
         {
             int winAmount = CurrentBet * 2;
             Balance += winAmount;
@@ -104,8 +110,15 @@ public class SlotGameManager : MonoBehaviour
         {
             StatusText.text = "You Lose! Try Again";
         }
+
         UpdateUI();
+
+        if (Balance <= 0)
+        {
+            SceneManager.LoadScene("lose");
+        }
     }
+
     void ToggleButtons(bool state)
     {
         SpinButton.interactable = state;
