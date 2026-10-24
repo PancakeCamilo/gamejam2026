@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Reel
   symbolSprites: []
-  reelImage: {fileID: 0}
+  reelImage: {fileID: 139384739}
 --- !u!1 &426419979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,7 +1058,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae763534f08643049af42c302875e8d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotGameManager
-  reels: []
+  reels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   SpinButton: {fileID: 1182755471}
   AddButton: {fileID: 426419981}
   SubtractButton: {fileID: 1305959537}
@@ -1608,7 +1611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Reel
   symbolSprites: []
-  reelImage: {fileID: 0}
+  reelImage: {fileID: 1154511569}
 --- !u!1 &1158524513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,7 +2217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Reel
   symbolSprites: []
-  reelImage: {fileID: 0}
+  reelImage: {fileID: 1514666287}
 --- !u!1 &1591587745
 GameObject:
   m_ObjectHideFlags: 0
