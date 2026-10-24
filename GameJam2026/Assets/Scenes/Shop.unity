@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c708853de08a94b4582d3e7f9eb2ebf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadSceneButton
-  sceneName: numberslot
+  sceneName: GameScreen
 --- !u!1 &450751996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,7 +1784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40.32, y: 11.973}
+  m_AnchoredPosition: {x: 40.32, y: -36}
   m_SizeDelta: {x: 564.429, y: 76.055}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759700169
@@ -1921,7 +1921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -278, y: -1.922}
+  m_AnchoredPosition: {x: -278, y: -49.894997}
   m_SizeDelta: {x: 72.211, y: 72.211}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1903687165
