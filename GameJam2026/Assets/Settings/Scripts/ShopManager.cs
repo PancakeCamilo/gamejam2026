@@ -54,7 +54,7 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    public void BuyCheck2()
+    /* public void BuyCheck2()
     {
         if (Balance >= 100000)
         {
