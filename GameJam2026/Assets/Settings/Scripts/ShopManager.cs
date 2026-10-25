@@ -23,10 +23,8 @@ public class ShopManager : MonoBehaviour
     void UpdateUI()
     {
         BalanceText.text = $"Balance: {Balance}";
-        BuyFood.onClick.AddListener(BuyCheck1);
-        BuyFood.onClick.AddListener(BuyCheck2);
     }
-    public void BuyCheck1()
+    /*public void BuyCheck1()
     {
         if (Balance >= 10000)
         {
@@ -38,7 +36,7 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    public void BuyCheck2()
+    /* public void BuyCheck2()
     {
         if (Balance >= 100000)
         {
@@ -49,7 +47,7 @@ public class ShopManager : MonoBehaviour
 
         }
     }
-    /*private void Awake()
+   private void Awake()
     {
         if (Instance == null)
         {
