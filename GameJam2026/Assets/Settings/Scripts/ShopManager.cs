@@ -30,7 +30,7 @@ public class ShopManager : MonoBehaviour
     {
         if (Balance >= 10000)
         {
-             = Balance - 10000;
+             GameManager.Instance.Balance -= 10000;
         }
         else
         {
