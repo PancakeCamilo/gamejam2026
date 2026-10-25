@@ -17,18 +17,35 @@ public class SlotGameManager : MonoBehaviour
     public TextMeshProUGUI BetText;
     public TextMeshProUGUI StatusText;
 
-    [Header("Game Values")]
+    [Header("Balance")]
+    public int StartingBalance = 1000;   // used if there's no GameManager in the scene
+    private int localBalance;
+
     public int Balance
     {
-        get => GameManager.Instance.Balance;
-        set => GameManager.Instance.Balance = value;
+        get => GameManager.Instance != null ? GameManager.Instance.Balance : localBalance;
+        set
+        {
+            if (GameManager.Instance != null) GameManager.Instance.Balance = value;
+            else localBalance = value;
+        }
     }
+
+    [Header("Game Values")]
     public int CurrentBet = 10;
     public int MinBet = 10;              // becomes the last bet made
     public int BetIncreasePerSpin = 5;
 
+    private void Awake()
+    {
+        localBalance = StartingBalance;
+    }
+
     private void Start()
     {
+        if (GameManager.Instance == null)
+            Debug.LogWarning("No GameManager in scene - using StartingBalance instead.", this);
+
         UpdateUI();
         SpinButton.onClick.AddListener(StartSpin);
         AddButton.onClick.AddListener(IncreaseBet);
@@ -37,8 +54,8 @@ public class SlotGameManager : MonoBehaviour
 
     void UpdateUI()
     {
-        BalanceText.text = $"Balance: {Balance}";
-        BetText.text = $"Bet: {CurrentBet} (Min: {MinBet})";
+        if (BalanceText != null) BalanceText.text = $"Balance: {Balance}";
+        if (BetText != null) BetText.text = $"Bet: {CurrentBet} (Min: {MinBet})";
     }
 
     public void IncreaseBet()
