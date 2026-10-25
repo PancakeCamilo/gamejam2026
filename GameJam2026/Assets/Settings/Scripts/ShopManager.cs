@@ -1,40 +1,56 @@
 using TMPro;
-using Unity.Android.Types;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ShopManager : MonoBehaviour
 {
     public static ShopManager Instance;
-    public Button BuyFood;
-    public Button BuyEvil;
+
+    [Header("Buttons")]
+    public Button BuyFood; // 10,000 item
+    public Button BuyEvil; // 100,000 item
     public Button BuyDebt;
 
     [Header("UI")]
     public TextMeshProUGUI BalanceText;
 
-
     public int Balance
     {
-        get => GameManager.Instance.Balance;
+        get => GameManager.Instance != null ? GameManager.Instance.Balance : 0;
+        set
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.Balance = value;
+            }
+        }
     }
 
-
-    void UpdateUI()
+    private void Start()
     {
-        BalanceText.text = $"Balance: {Balance}";
-        BuyFood.onClick.AddListener(BuyCheck1);
-        BuyFood.onClick.AddListener(BuyCheck2);
+        // 1. Hook up button listeners ONCE when the scene loads
+        if (BuyFood != null) BuyFood.onClick.AddListener(BuyCheck1);
+        if (BuyEvil != null) BuyEvil.onClick.AddListener(BuyCheck2);
+
+        // 2. Refresh UI text on start
+        UpdateUI();
     }
+
+    public void UpdateUI()
+    {
+        // 3. Null-check ensures Unity won't crash if BalanceText isn't assigned yet
+        if (BalanceText != null)
+        {
+            BalanceText.text = $"Balance: {Balance}";
+        }
+    }
+
     public void BuyCheck1()
     {
         if (Balance >= 10000)
         {
-             = Balance - 10000;
-        }
-        else
-        {
-
+            Balance -= 10000;
+            UpdateUI();
         }
     }
 
@@ -42,39 +58,8 @@ public class ShopManager : MonoBehaviour
     {
         if (Balance >= 100000)
         {
-             = Balance - 100000;
+            Balance -= 100000;
+            UpdateUI();
         }
-        else
-        {
-
-        }
-    }
-    /*private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }*/
-
-
-
-
-    private void Start()
-    {
-        UpdateUI();
-        GameManager BalanceToTake = GetComponent<GameManager>();
-
-    }
-
-
-    void Update()
-    {
-        
     }
 }

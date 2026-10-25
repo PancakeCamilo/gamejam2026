@@ -963,6 +963,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a13719e292a06842a2db24090e48f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
+  BuyFood: {fileID: 0}
+  BuyEvil: {fileID: 0}
+  BuyDebt: {fileID: 0}
   BalanceText: {fileID: 1759700169}
 --- !u!4 &815146862
 Transform:
@@ -1036,7 +1039,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1M
+  m_text: 10k
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec3085d3836076f48822565ecf28ba45, type: 2}
   m_sharedMaterial: {fileID: -2305612679424808324, guid: ec3085d3836076f48822565ecf28ba45, type: 2}
@@ -1128,6 +1131,7 @@ GameObject:
   - component: {fileID: 1123013231}
   - component: {fileID: 1123013230}
   - component: {fileID: 1123013229}
+  - component: {fileID: 1123013232}
   m_Layer: 0
   m_Name: Button_RemoveDebt
   m_TagString: Untagged
@@ -1197,7 +1201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1123013230}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1123013232}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1123013230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,6 +1252,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123013227}
   m_CullTransparentMesh: 1
+--- !u!114 &1123013232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123013227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb906fcd8a0dad4b8e4142b25dff342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WinButton
+  RequiredBalance: 10000
+  WinSceneName: win
+  BuyWinButton: {fileID: 1123013229}
+  StatusText: {fileID: 2029976779}
 --- !u!1 &1134217379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,8 +2007,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40.32, y: 11.973}
-  m_SizeDelta: {x: 564.429, y: 76.055}
+  m_AnchoredPosition: {x: 302.7, y: 11.973}
+  m_SizeDelta: {x: 1036.1, y: 76.055}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759700169
 MonoBehaviour:
@@ -2032,7 +2064,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2188,7 +2220,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -141.78, y: -316.49}
-  m_SizeDelta: {x: 130.624, y: 125.156}
+  m_SizeDelta: {x: 347.3, y: 125.156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1975319509
 MonoBehaviour:
@@ -2210,7 +2242,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100K
+  m_text: LOCKED!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec3085d3836076f48822565ecf28ba45, type: 2}
   m_sharedMaterial: {fileID: -2305612679424808324, guid: ec3085d3836076f48822565ecf28ba45, type: 2}
@@ -2244,7 +2276,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2325,7 +2357,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 508, y: -343.28}
-  m_SizeDelta: {x: 448.931, y: 125.156}
+  m_SizeDelta: {x: 846.6, y: 125.156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2029976779
 MonoBehaviour:
@@ -2381,7 +2413,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2462,7 +2494,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -586.47, y: -316.34}
-  m_SizeDelta: {x: 130.624, y: 125.156}
+  m_SizeDelta: {x: 434.3, y: 125.156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2036675739
 MonoBehaviour:
@@ -2484,7 +2516,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10K
+  m_text: LOCKED!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec3085d3836076f48822565ecf28ba45, type: 2}
   m_sharedMaterial: {fileID: -2305612679424808324, guid: ec3085d3836076f48822565ecf28ba45, type: 2}
@@ -2518,7 +2550,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

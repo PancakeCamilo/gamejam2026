@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6597cd73aa64cf4b801a7d17ce85d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResetBalanceOnStart
-  DefaultBalance: 1000
+  DefaultBalance: 5000
 --- !u!4 &469657115
 Transform:
   m_ObjectHideFlags: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6597cd73aa64cf4b801a7d17ce85d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResetBalanceOnStart
-  DefaultBalance: 1000
+  DefaultBalance: 5000
 --- !u!4 &506230109
 Transform:
   m_ObjectHideFlags: 0
