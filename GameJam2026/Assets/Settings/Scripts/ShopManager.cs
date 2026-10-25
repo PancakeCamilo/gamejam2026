@@ -28,17 +28,15 @@ public class ShopManager : MonoBehaviour
 
     private void Start()
     {
-        // 1. Hook up button listeners ONCE when the scene loads
+        // Hook up button listeners once when scene loads
         if (BuyFood != null) BuyFood.onClick.AddListener(BuyCheck1);
         if (BuyEvil != null) BuyEvil.onClick.AddListener(BuyCheck2);
 
-        // 2. Refresh UI text on start
         UpdateUI();
     }
 
     public void UpdateUI()
     {
-        // 3. Null-check ensures Unity won't crash if BalanceText isn't assigned yet
         if (BalanceText != null)
         {
             BalanceText.text = $"Balance: {Balance}";
@@ -54,7 +52,7 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    /* public void BuyCheck2()
+    public void BuyCheck2()
     {
         if (Balance >= 100000)
         {
