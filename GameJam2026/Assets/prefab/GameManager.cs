@@ -1,4 +1,4 @@
-using Unity.Android.Types;
+
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
